@@ -6,7 +6,6 @@
         <p class="lead text-muted">Calendario non oficial das actividades do Sal&oacute;n do Libro de Pontevedra 2018.<br>
         Realizado coa informaci&oacute;n contida no folleto oficial do Concello na s&uacute;a primeira edici&oacute;n</p>
         <p>
-          <!-- <button @click="getActividades" class="btn btn-primary my-2">Cargar datos</button> -->
           <button @click="mostrarFiltros = !mostrarFiltros" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
             {{textButtonFiltros}}
           </button>
