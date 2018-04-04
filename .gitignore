@@ -3,8 +3,8 @@ node_modules/
 dist/
 npm-debug.log
 yarn-error.log
-actividades.json
-
+src/actividades.json
+src/actividades_backup.json
 # Editor directories and files
 .idea
 *.suo
