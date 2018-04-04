@@ -3,8 +3,8 @@
   <section class="jumbotron text-center">
       <div class="container">
         <h1 class="jumbotron-heading">Sal&oacute;n do Libro 2018</h1>
-        <p class="lead text-muted">Calendario non oficial das actividades do Sal&oacute;n do Libro de Pontevedra 2018.<br>
-        Realizado coa informaci&oacute;n contida no folleto oficial do Concello na s&uacute;a primeira edici&oacute;n</p>
+        <p class="lead text-muted">Calendario <i>non oficial</i> das actividades do Sal&oacute;n do Libro de Pontevedra 2018.<br>
+        Realizado coa informaci&oacute;n contida no  <a href="http://www.salondolibro.gal/programacion-2018/" target="blank">programa oficial</a> do Sal&oacute;n do Libro na s&uacute;a primeira edici&oacute;n</p>
         <p>
           <button @click="mostrarFiltros = !mostrarFiltros" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
             {{textButtonFiltros}}
