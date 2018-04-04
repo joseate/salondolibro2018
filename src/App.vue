@@ -135,29 +135,35 @@
               </div>   
             </div>
           </div>      
-                                                         
-
         </div>          
-
       </div>
       <h1 class="display-4" v-if="filteredActividades.length == 0">Non hai actividades cos criterios de b&uacute;squeda</h1>
       <h1 class="display-4" v-if="filteredActividades.length == 1">Atopaches {{filteredActividades.length}} actividade</h1>
       <h1 class="display-4" v-if="filteredActividades.length > 1">Atopaches {{filteredActividades.length}} actividades</h1>
+      <h3 class="display-5" v-if="favoritos.length == 1">Xa t&eacute;s marcado {{favoritos.length}} favorito</h3>
+      <h3 class="display-5" v-if="favoritos.length > 1">Xa t&eacute;s marcados {{favoritos.length}} favoritos</h3>
+      <div v-if="favoritos.length >= 1">
+        <input class="form-check-input" type="checkbox" id="filtroFavoritos" v-model="filtroFavoritos" :value="filtroFavoritos">
+        <label class="form-check-label" for="filtroFavoritos">Ver s&oacute; os meus favoritos</label>
+      </div>
     </section>
     <div class="container">
       <div class="row">
-        <div class="col-md-4" v-for="actividad in filteredActividades" v-bind:key="actividad.id">
+        <div class="col-md-4" v-for="actividad in filteredActividades" v-bind:key="actividad._id">
           <div class="card box-shadow">               
           <div class="card-header">
             <div class="d-flex justify-content-around">
-              <span>{{actividad.dia}}</span> 
+              <span><small>{{actividad.dia}}</small></span> 
               <span>{{actividad.hora_inicio}}</span>
               <span v-if="actividadeFamiliar(actividad.publico_familiar)">
-                <img src="./assets/1495911998-300px.png" alt="Familiar" width="30rem" height="30rem">
+                <img src="./assets/1495911998-300px.png" alt="Público familiar" width="30rem" height="30rem" data-toggle="tooltip" data-placement="top" title="Público familiar">
               </span>
               <span v-if="inscricionPrevia(actividad.inscricion_previa)">
-                <img src="./assets/edit-icon-300px.png" alt="Inscricion previa" width="25rem" height="25rem">
-              </span>                             
+                <img src="./assets/edit-icon-300px.png" alt="Inscricion previa" width="25rem" height="25rem" data-toggle="tooltip" data-placement="top" title="Inscrión previa">
+              </span> 
+              <div>
+                <button @click="marcarFavorito(actividad._id)" class="btn" :class="esFavorito(actividad._id) ? 'btn-warning' : 'btn-secondary'">G&uacute;stame</button>
+              </div>
             </div>
           </div>
             <div class="card-body">
@@ -165,15 +171,12 @@
               <h3 class="card-title">{{actividad.titulo}}</h3>
               <h4 class="card-subtitle mb-2 text-muted">{{actividad.subtitulo}}</h4>                  
               <p class="card-text" >{{actividad.texto}}</p>
-              
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item" v-if="actividad.ubicacion"><small>{{actividad.ubicacion}}</small></li>
                   <li class="list-group-item" v-if="actividad.idade_recomendada" :class="{'text-danger': actividad.idade_recomendada == 'Público adulto'}"><small>{{actividad.idade_recomendada}}</small></li>
                   <li class="list-group-item" :class="{'text-danger': inscricionPrevia(actividad.inscricion_previa)}" v-if="actividad.inscricion"><small>{{actividad.inscricion}} <span v-if="actividad.capacidade"> | {{actividad.capacidade}}</span></small></li>
                   <li class="list-group-item" v-if="actividad.prezo"> <small class="text-muted">{{actividad.prezo}}</small></li>
                 </ul>
-                
-              
             </div>
           </div>
         </div>
@@ -204,10 +207,13 @@ export default {
       idades: [],
       checkedIdades: [],
       inscricions: [],
-      checkedInscricions: []
+      checkedInscricions: [],
+      favoritos: [],
+      filtroFavoritos: false
     };
   },
   created: function() {
+    this.getFavoritos();
     this.getActividades();
   },
   computed: {
@@ -230,6 +236,9 @@ export default {
       }
       if (this.checkedInscricions.length) {
         filtros["inscricion"] = this.checkedInscricions;
+      }
+      if (this.filtroFavoritos) {
+        filtros["_id"] = this.favoritos;
       }
 
       // return this.actividades.filter(j => this.checkedDias.includes(j.dia));
@@ -264,6 +273,9 @@ export default {
     }
   },
   methods: {
+    getFavoritos: function () {
+      this.favoritos = JSON.parse(localStorage.getItem("SDL.actividades.fav")) || [] ;
+    },
     getActividades: function() {
       this.actividades = [];
       this.dias = [...new Set(actividadesJson.map(item => item.dia))].sort();
@@ -293,7 +305,25 @@ export default {
     },
     actividadeFamiliar: function (value) {
       return value == 'true';
-    }        
+    },
+    marcarFavorito: function (value) {
+      if (!this.favoritos.includes(value)) {
+        this.favoritos.push(value)
+      } else {
+        var borrado = this.favoritos.splice(this.favoritos.indexOf(value),1);
+      }
+      this.actualizarLocalStorage();
+    },
+    desmarcarFavorito: function (value) {
+      var borrado = this.favoritos.splice(this.favoritos.indexOf(value));
+      this.actualizarLocalStorage();
+    },
+    esFavorito: function (value) {
+      return this.favoritos.includes(value);
+    },
+    actualizarLocalStorage: function () {
+      localStorage.setItem("SDL.actividades.fav", JSON.stringify(this.favoritos));
+    }
   }
 };
 </script>
