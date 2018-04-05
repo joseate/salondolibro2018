@@ -149,7 +149,7 @@
     </section>
     <div class="container">
       <div class="row">
-        <div class="col-md-4" v-for="actividad in filteredActividades" v-bind:key="actividad._id">
+        <div class="col-12 col-sm-12 col-md-6 col-ld-4" v-for="actividad in filteredActividades" v-bind:key="actividad._id">
           <div class="card box-shadow">               
           <div class="card-header">
             <div class="d-flex justify-content-around">
