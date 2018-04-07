@@ -24,7 +24,7 @@
             </div>
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
               <div class="card-body">            
-                <div class="form-check form-check-inline" v-for="dia in dias" v-bind:key="dia">
+                <div class="form-check form-check-inline d-flex justify-content-around" v-for="dia in dias" v-bind:key="dia">
                   <span v-if="dia">
                     <input class="form-check-input" type="checkbox" :id="dia" v-model="checkedDias" :value="dia">
                     <label class="form-check-label" :for="dia" style="width: 86px;">{{dia}}</label>
@@ -46,7 +46,7 @@
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
               <div class="card-body">            
-                <div class="form-check form-check-inline" v-for="hora in horas" v-bind:key="hora">
+                <div class="form-check form-check-inline d-flex justify-content-around" v-for="hora in horas" v-bind:key="hora">
                   <span v-if="hora">
                     <input class="form-check-input" type="checkbox" :id="hora" v-model="checkedHoras" :value="hora">
                     <label class="form-check-label" :for="hora">{{hora}}</label>
@@ -69,7 +69,7 @@
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
               <div class="card-body">            
-                <div class="form-check form-check-inline" v-for="categoria in categorias" v-bind:key="categoria">
+                <div class="form-check form-check-inline d-flex justify-content-around" v-for="categoria in categorias" v-bind:key="categoria">
                   <span v-if="categoria">
                     <input class="form-check-input" type="checkbox" :id="categoria" v-model="checkedCategorias" :value="categoria">
                     <label class="form-check-label" :for="categoria">{{categoria}}</label>
@@ -92,7 +92,7 @@
             </div>
             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
               <div class="card-body">            
-                <div class="form-check form-check-inline" v-for="lugar in lugares" v-bind:key="lugar">
+                <div class="form-check form-check-inline d-flex justify-content-around" v-for="lugar in lugares" v-bind:key="lugar">
                   <span v-if="lugar">
                     <input class="form-check-input" type="checkbox" :id="lugar" v-model="checkedLugares" :value="lugar">
                     <label class="form-check-label text-truncate" :for="lugar">{{lugar}}</label>
@@ -115,7 +115,7 @@
             </div>
             <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
               <div class="card-body">            
-                <div class="form-check form-check-inline" v-for="idade in idades" v-bind:key="idade">
+                <div class="form-check form-check-inline d-flex justify-content-around" v-for="idade in idades" v-bind:key="idade">
                   <span v-if="idade">
                     <input class="form-check-input" type="checkbox" :id="idade" v-model="checkedIdades" :value="idade">
                     <label class="form-check-label" :for="idade">{{idade}}</label>
@@ -138,7 +138,7 @@
             </div>
             <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
               <div class="card-body">            
-                <div class="form-check form-check-inline" v-for="inscricion in inscricions" v-bind:key="inscricion">
+                <div class="form-check form-check-inline d-flex justify-content-around" v-for="inscricion in inscricions" v-bind:key="inscricion">
                   <span v-if="inscricion">
                     <input class="form-check-input" type="checkbox" :id="inscricion" v-model="checkedInscricions" :value="inscricion">
                     <label class="form-check-label" :for="inscricion">{{inscricion}}</label>
