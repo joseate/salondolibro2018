@@ -18,8 +18,8 @@
                 <button class="btn btn-info collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="width: 188px;">Xornadas</button>
               </div>
               <div class="float-right">
-                <div v-if="checkedDias.length == 1"><button class="btn btn-error" @click="checkedDias=[]" v-if="checkedDias.length > 0">Borrar {{checkedDias.length}} filtro</button></div>
-                <div v-if="checkedDias.length > 1"><button class="btn btn-error" @click="checkedDias=[]" v-if="checkedDias.length > 0">Borrar {{checkedDias.length}} filtros</button></div>
+                <div v-if="checkedDias.length == 1"><button class="btn btn-danger" @click="checkedDias=[]" v-if="checkedDias.length > 0">Borrar {{checkedDias.length}} filtro</button></div>
+                <div v-if="checkedDias.length > 1"><button class="btn btn-danger" @click="checkedDias=[]" v-if="checkedDias.length > 0">Borrar {{checkedDias.length}} filtros</button></div>
               </div>              
             </div>
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
@@ -40,8 +40,8 @@
                 <button class="btn btn-info collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" style="width: 188px;">Horas actividades</button>
               </div>
               <div class="float-right">
-                <div v-if="checkedHoras.length == 1"><button class="btn btn-error" @click="checkedHoras=[]" v-if="checkedHoras.length > 0">Borrar {{checkedHoras.length}} filtro</button></div>
-                <div v-if="checkedHoras.length > 1"><button class="btn btn-error" @click="checkedHoras=[]" v-if="checkedHoras.length > 0">Borrar {{checkedHoras.length}} filtros</button></div>
+                <div v-if="checkedHoras.length == 1"><button class="btn btn-danger" @click="checkedHoras=[]" v-if="checkedHoras.length > 0">Borrar {{checkedHoras.length}} filtro</button></div>
+                <div v-if="checkedHoras.length > 1"><button class="btn btn-danger" @click="checkedHoras=[]" v-if="checkedHoras.length > 0">Borrar {{checkedHoras.length}} filtros</button></div>
               </div>
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -63,8 +63,8 @@
                 <button class="btn btn-info collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" style="width: 188px;">Categor&iacute;as</button>
               </div>
               <div class="float-right">
-                <div v-if="checkedCategorias.length == 1"><button class="btn btn-error" @click="checkedCategorias=[]" v-if="checkedCategorias.length > 0">Borrar {{checkedCategorias.length}} filtro</button></div>
-                <div v-if="checkedCategorias.length > 1"><button class="btn btn-error" @click="checkedCategorias=[]" v-if="checkedCategorias.length > 0">Borrar {{checkedCategorias.length}} filtros</button></div>
+                <div v-if="checkedCategorias.length == 1"><button class="btn btn-danger" @click="checkedCategorias=[]" v-if="checkedCategorias.length > 0">Borrar {{checkedCategorias.length}} filtro</button></div>
+                <div v-if="checkedCategorias.length > 1"><button class="btn btn-danger" @click="checkedCategorias=[]" v-if="checkedCategorias.length > 0">Borrar {{checkedCategorias.length}} filtros</button></div>
               </div>
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
@@ -86,8 +86,8 @@
                 <button class="btn btn-info collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" style="width: 188px;">Lugares</button>
               </div>
               <div class="float-right">
-                <div v-if="checkedLugares.length == 1"><button class="btn btn-error" @click="checkedLugares=[]" v-if="checkedLugares.length > 0">Borrar {{checkedLugares.length}} filtro</button></div>
-                <div v-if="checkedLugares.length > 1"><button class="btn btn-error" @click="checkedLugares=[]" v-if="checkedLugares.length > 0">Borrar {{checkedLugares.length}} filtros</button></div>
+                <div v-if="checkedLugares.length == 1"><button class="btn btn-danger" @click="checkedLugares=[]" v-if="checkedLugares.length > 0">Borrar {{checkedLugares.length}} filtro</button></div>
+                <div v-if="checkedLugares.length > 1"><button class="btn btn-danger" @click="checkedLugares=[]" v-if="checkedLugares.length > 0">Borrar {{checkedLugares.length}} filtros</button></div>
               </div>              
             </div>
             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
@@ -109,8 +109,8 @@
                 <button class="btn btn-info collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" style="width: 188px;">Idades recomendadas</button>
               </div>
               <div class="float-right">
-                <div v-if="checkedIdades.length == 1"><button class="btn btn-error" @click="checkedIdades=[]" v-if="checkedIdades.length > 0">Borrar {{checkedIdades.length}} filtro</button></div>
-                <div v-if="checkedIdades.length > 1"><button class="btn btn-error" @click="checkedIdades=[]" v-if="checkedIdades.length > 0">Borrar {{checkedIdades.length}} filtros</button></div>
+                <div v-if="checkedIdades.length == 1"><button class="btn btn-danger" @click="checkedIdades=[]" v-if="checkedIdades.length > 0">Borrar {{checkedIdades.length}} filtro</button></div>
+                <div v-if="checkedIdades.length > 1"><button class="btn btn-danger" @click="checkedIdades=[]" v-if="checkedIdades.length > 0">Borrar {{checkedIdades.length}} filtros</button></div>
               </div>
             </div>
             <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
@@ -132,8 +132,8 @@
                 <button class="btn btn-info collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix" style="width: 188px;">Tipos inscrici&oacute;ns</button>
               </div>
               <div class="float-right">
-                <div v-if="checkedInscricions.length == 1"><button class="btn btn-error" @click="checkedInscricions=[]" v-if="checkedInscricions.length > 0">Borrar {{checkedInscricions.length}} filtro</button></div>
-                <div v-if="checkedInscricions.length > 1"><button class="btn btn-error" @click="checkedInscricions=[]" v-if="checkedInscricions.length > 0">Borrar {{checkedInscricions.length}} filtros</button></div>
+                <div v-if="checkedInscricions.length == 1"><button class="btn btn-danger" @click="checkedInscricions=[]" v-if="checkedInscricions.length > 0">Borrar {{checkedInscricions.length}} filtro</button></div>
+                <div v-if="checkedInscricions.length > 1"><button class="btn btn-danger" @click="checkedInscricions=[]" v-if="checkedInscricions.length > 0">Borrar {{checkedInscricions.length}} filtros</button></div>
               </div>
             </div>
             <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
